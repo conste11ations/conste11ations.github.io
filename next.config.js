@@ -3,7 +3,7 @@
 // (But you could use ES2015 features supported by your Node.js version)
 
 module.exports = {
-  assetPrefix: '.',
+  assetPrefix: '/out/',
   images: {
     loader: "custom",
   },
