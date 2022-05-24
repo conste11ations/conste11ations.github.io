@@ -4,10 +4,8 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "export": "next export",
-    "deploy1": "rm -rf node_modules/.cache && next build && next export && touch out/.nojekyll && git add out/",
-    "deploy2": "git push origin gh-pages",
-    "deploy-g": "gh-pages -d out -t true"
+    "export": "next build && next export && touch ./out/.nojekyll",
+    "deploy": "gh-pages -d out -t true"
   },
   "dependencies": {
     "@babel/plugin-proposal-decorators": "^7.16.7",
