@@ -257,14 +257,21 @@ export default function Biddle() {
       )}
 
       {/* Ko-fi */}
-      <div className="mt-8 mb-4">
+      <div className="mt-8 mb-4 flex justify-center">
         <a
           href="https://ko-fi.com/katrachel"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 bg-[#FF5E5B] hover:bg-[#ff4340] text-white font-bold px-5 py-3 rounded-xl transition-colors shadow-lg"
+          style={{
+            clipPath: 'polygon(8% 20%, 18% 5%, 35% 0%, 50% 8%, 65% 0%, 82% 5%, 92% 20%, 100% 38%, 95% 60%, 85% 78%, 70% 90%, 50% 100%, 30% 90%, 15% 78%, 5% 60%, 0% 38%)',
+            backdropFilter: 'blur(8px)',
+            backgroundColor: 'rgba(255, 255, 255, 0.15)',
+            border: '1px solid rgba(255,255,255,0.2)',
+          }}
+          className="flex flex-col items-center justify-center w-44 h-44 text-white font-bold transition-all hover:scale-105 hover:bg-white/20"
         >
-          <span className="text-xl">☕</span> Buy me a coffee
+          <span className="text-4xl mb-2">☕</span>
+          <span className="text-sm text-center leading-tight px-4">buy me a coffee</span>
         </a>
       </div>
     </div>
