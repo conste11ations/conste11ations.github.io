@@ -37,11 +37,8 @@ const LISTINGS_PER_CITY = 2
 function fetchListings(city) {
   return new Promise((resolve, reject) => {
     const params = new URLSearchParams({
-      city,
       status: 'U',
-      hasImages: 'true',
-      resultsPerPage: String(LISTINGS_PER_CITY),
-      fields: 'mlsNumber,address,details,images,soldPrice',
+      resultsPerPage: '1',
     })
 
     const options = {
@@ -58,7 +55,7 @@ function fetchListings(city) {
       let data = ''
       res.on('data', chunk => data += chunk)
       res.on('end', () => {
-        console.log(`  Raw response for ${city} (status ${res.statusCode}):`, data.slice(0, 500))
+        console.log(`  Raw response for ${city} (status ${res.statusCode}):`, data.slice(0, 3000))
         try {
           resolve(JSON.parse(data))
         } catch (e) {
