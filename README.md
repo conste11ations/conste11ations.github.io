@@ -44,7 +44,9 @@ yarn deploy
 
 This pushes the contents of `out/` to the `gh-pages` branch using [`gh-pages`](https://github.com/tschaub/gh-pages). GitHub Pages serves the site from that branch automatically.
 
-The live site will update at **https://conste11ations.github.io** within a minute or two.
+The live site will update at **https://rachelkat.com** within a minute or two.
+
+> **Important:** `public/CNAME` must exist and contain `www.rachelkat.com`. This file is what tells GitHub Pages to serve the site at the custom domain. If it's missing, the custom domain will be wiped on the next deploy and the site will 404.
 
 ### One-liner
 
