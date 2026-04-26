@@ -1,3 +1,3 @@
 export const MAX_GUESSES = 6
 export const CORRECT_THRESHOLD = 15000
-export const CITIES = ['Toronto', 'Vancouver', 'Montreal', 'Calgary']
+export const CITIES = ['Toronto']

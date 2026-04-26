@@ -31,7 +31,7 @@ if (!API_KEY) {
   process.exit(1)
 }
 
-const CITIES = ['Toronto', 'Vancouver', 'Montreal', 'Calgary']
+const CITIES = ['Toronto']
 const LISTINGS_PER_CITY = 2
 
 function fetchListings(city) {
