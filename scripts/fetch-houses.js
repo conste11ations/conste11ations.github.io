@@ -38,7 +38,7 @@ function fetchListings(city) {
   return new Promise((resolve, reject) => {
     const params = new URLSearchParams({
       city,
-      status: 'sold',
+      status: 'U',
       hasImages: 'true',
       resultsPerPage: String(LISTINGS_PER_CITY),
       fields: 'mlsNumber,address,details,images,soldPrice',
