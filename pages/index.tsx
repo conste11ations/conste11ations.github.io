@@ -6,7 +6,7 @@ import Nav from '../components/Nav'
 export default function Home() {
   return (
     <>
-      <div className="h-screen overflow-y-auto overflow-x-hidden [perspective:100px]">
+      <div className="h-screen overflow-y-auto overflow-x-hidden [perspective:100px] bg-black">
         <Nav />
         <DuskMountains />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 max-w-none">
