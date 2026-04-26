@@ -255,6 +255,18 @@ export default function Biddle() {
           </p>
         </div>
       )}
+
+      {/* Ko-fi */}
+      <div className="mt-8 mb-4">
+        <a
+          href="https://ko-fi.com/katrachel"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 bg-[#FF5E5B] hover:bg-[#ff4340] text-white font-bold px-5 py-3 rounded-xl transition-colors shadow-lg"
+        >
+          <span className="text-xl">☕</span> Buy me a coffee
+        </a>
+      </div>
     </div>
   )
 }
