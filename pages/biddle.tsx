@@ -1,5 +1,4 @@
 import { useState, useRef } from 'react'
-import Script from 'next/script'
 import 'tailwindcss/tailwind.css'
 
 const MAX_GUESSES = 6
@@ -258,15 +257,11 @@ export default function Biddle() {
       )}
 
       {/* Ko-fi */}
-      <div className="mt-8 mb-4" id="kofi-widget"></div>
-      <Script
-        src="https://storage.ko-fi.com/cdn/widget/Widget_2.js"
-        strategy="afterInteractive"
-        onLoad={() => {
-          (window as any).kofiwidget2.init('Support me on Ko-fi', '#828994', 'F2F21YIAWI')
-          ;(window as any).kofiwidget2.draw()
-        }}
-      />
+      <div className="mt-8 mb-4">
+        <a href="https://ko-fi.com/F2F21YIAWI" target="_blank" rel="noopener noreferrer">
+          <img height="36" style={{border: '0px', height: '36px'}} src="https://storage.ko-fi.com/cdn/kofi1.png?v=6" alt="Buy Me a Coffee at ko-fi.com" />
+        </a>
+      </div>
     </div>
   )
 }
