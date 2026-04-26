@@ -1,4 +1,4 @@
-name: Refresh houses
+name: refresh-houses
 
 on:
   workflow_dispatch: # manual trigger only
