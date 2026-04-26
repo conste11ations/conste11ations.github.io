@@ -1,0 +1,43 @@
+name: Refresh houses
+
+on:
+  workflow_dispatch: # manual trigger only
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Fetch houses from Repliers API
+        env:
+          REPLIERS_API_KEY: ${{ secrets.REPLIERS_API_KEY }}
+        run: node scripts/fetch-houses.js
+
+      - name: Commit updated houses
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/houses.json
+          git diff --staged --quiet && echo "No changes to commit" || git commit -m "Refresh house listings"
+          git push
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Build and export
+        run: yarn export
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./out
+          enable_jekyll: false
