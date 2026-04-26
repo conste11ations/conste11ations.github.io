@@ -2,10 +2,10 @@ import 'tailwindcss/tailwind.css'
 
 export default function Privacy() {
   return (
-    <>
-      <div className="relative m-8 max-w-2xl pb-16">
+    <div className="relative min-h-screen">
+      <div className="relative m-8 max-w-2xl pb-16 z-10">
         <h1 className="text-5xl md:text-8xl">
-          <span className="block animate-fade-in-down font-extrabold text-white xl:inline m-8 whitespace-nowrap">Privacy Policy</span>
+          <span className="block animate-fade-in-down font-extrabold text-white xl:inline m-8 md:whitespace-nowrap">Privacy Policy</span>
         </h1>
         <div className="block animate-fade-in-down text-white m-8 md:text-lg space-y-6">
           <p className="text-slate-400 text-sm">Last updated: April 2026</p>
@@ -45,7 +45,7 @@ export default function Privacy() {
           </div>
         </div>
       </div>
-      <img src="circles.svg" className="fixed inset-0 object-cover w-full h-full -z-10" />
-    </>
+      <img src="circles.svg" className="absolute inset-0 object-cover w-full h-full" style={{zIndex: -1}} />
+    </div>
   )
 }
