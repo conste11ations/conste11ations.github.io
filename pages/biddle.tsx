@@ -257,21 +257,20 @@ export default function Biddle() {
       )}
 
       {/* Ko-fi */}
-      <div className="mt-8 mb-4 flex justify-center">
+      <div className="mt-8 mb-4">
         <a
           href="https://ko-fi.com/katrachel"
           target="_blank"
           rel="noopener noreferrer"
-          style={{
-            clipPath: 'polygon(8% 20%, 18% 5%, 35% 0%, 50% 8%, 65% 0%, 82% 5%, 92% 20%, 100% 38%, 95% 60%, 85% 78%, 70% 90%, 50% 100%, 30% 90%, 15% 78%, 5% 60%, 0% 38%)',
-            backdropFilter: 'blur(8px)',
-            backgroundColor: 'rgba(255, 255, 255, 0.15)',
-            border: '1px solid rgba(255,255,255,0.2)',
-          }}
-          className="flex flex-col items-center justify-center w-44 h-44 text-white font-bold transition-all hover:scale-105 hover:bg-white/20"
+          className="inline-flex items-center gap-3 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-medium text-sm px-4 py-2.5 rounded-lg transition-colors shadow-xs focus:outline-none focus:ring-4 focus:ring-white/20 backdrop-blur-sm"
         >
-          <span className="text-4xl mb-2">☕</span>
-          <span className="text-sm text-center leading-tight px-4">buy me a coffee</span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-6 h-6" fill="none">
+            <path d="M18.5 3H5.5C4.4 3 3.5 3.9 3.5 5v10c0 1.1.9 2 2 2h4l2 3 2-3h5c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z" fill="#FF5E5B"/>
+            <path d="M18.5 3h-2c1.1 0 2 .9 2 2v10c0 1.1-.9 2-2 2h2c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z" fill="#FF3D3A"/>
+            <path d="M8 8.5c0-.3.2-.5.5-.5h5c.3 0 .5.2.5.5v3c0 1.7-1.3 3-3 3s-3-1.3-3-3v-3z" fill="white"/>
+            <path d="M14 8h1.5c.8 0 1.5.7 1.5 1.5S16.3 11 15.5 11H14V8z" fill="white"/>
+          </svg>
+          Buy me a coffee
         </a>
       </div>
     </div>
