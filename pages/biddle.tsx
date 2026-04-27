@@ -188,8 +188,9 @@ export default function Biddle() {
             </>
           )}
           <p className="text-2xl font-extrabold text-white mt-4">
-            Sale price: {formatPrice(house.price)}
+            List price: {formatPrice(house.price)}
           </p>
+          <p className="text-slate-400 text-sm mt-1">{house.address}</p>
         </div>
       )}
 
