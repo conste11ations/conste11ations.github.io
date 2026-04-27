@@ -33,9 +33,16 @@ export default function Biddle() {
   const [won, setWon] = useState(false)
   const inputRef = useRef<HTMLInputElement>(null)
 
-  if (!city) return <CityPicker onSelect={setCity} />
+  if (!city) {
+    if (CITIES.length === 1) {
+      setCity(CITIES[0])
+      return null
+    }
+    return <CityPicker onSelect={setCity} />
+  }
 
   const house = getTodaysHouse(houses as any, city)
+  const displayImages = house.images.slice(0, 6)
 
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     const raw = e.target.value.replace(/[^0-9]/g, '')
@@ -90,10 +97,10 @@ export default function Biddle() {
       {/* House card */}
       <div className="w-full max-w-xl bg-slate-800 rounded-2xl overflow-hidden shadow-2xl mb-6">
         <div className="relative">
-          <img src={house.images[imgIndex]} className="w-full h-64 object-cover" alt="House" />
-          {house.images.length > 1 && (
+          <img src={displayImages[imgIndex]} className="w-full h-64 object-cover" alt="House" />
+          {displayImages.length > 1 && (
             <div className="absolute bottom-3 left-0 right-0 flex justify-center gap-2">
-              {house.images.map((_, i) => (
+              {displayImages.map((_, i) => (
                 <button key={i} onClick={() => setImgIndex(i)}
                   className={`w-2.5 h-2.5 rounded-full transition-colors ${i === imgIndex ? 'bg-white' : 'bg-white/40'}`} />
               ))}
@@ -104,7 +111,7 @@ export default function Biddle() {
           <div className="flex gap-4 text-slate-400 text-sm mb-3">
             <span>{house.beds} bed</span>
             <span>{house.baths} bath</span>
-            <span>{house.sqft.toLocaleString()} sqft</span>
+            <span>{typeof house.sqft === 'number' ? house.sqft.toLocaleString() : house.sqft} sqft</span>
             <span>{house.type}</span>
             <span>Built {house.year}</span>
           </div>

@@ -4,7 +4,7 @@ export interface House {
   address: string
   beds: number
   baths: number
-  sqft: number
+  sqft: number | string
   type: string
   year: number
   description: string
