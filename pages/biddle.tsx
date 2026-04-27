@@ -8,7 +8,7 @@ function CityPicker({ onSelect }: { onSelect: (city: string) => void }) {
   return (
     <div className="min-h-screen bg-slate-900 text-white flex flex-col items-center justify-center px-4">
       <h1 className="text-4xl font-extrabold tracking-tight mb-2">biddle</h1>
-      <p className="text-slate-400 mb-10">Which city do you want to play?</p>
+      <p className="text-slate-400 mb-10">Choose a city and start guessing house prices!</p>
       <div className="grid grid-cols-1 gap-3 w-full max-w-xs">
         {CITIES.map(city => (
           <button
