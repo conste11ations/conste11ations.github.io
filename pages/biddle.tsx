@@ -127,7 +127,10 @@ export default function Biddle() {
             <span>Built {house.year}</span>
           </div>
           <div className="relative">
-            <p className={`text-slate-300 text-sm leading-relaxed ${descExpanded ? '' : 'line-clamp-3'}`}>
+            <p
+              className="text-slate-300 text-sm leading-relaxed"
+              style={descExpanded ? undefined : { display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}
+            >
               {house.description}
             </p>
             {!descExpanded && (
