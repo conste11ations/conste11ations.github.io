@@ -47,12 +47,9 @@ process.stdin.on('end', () => {
     const province = meta?.provinceAbbr || addr.state || addr.province || 'ON'
     const address = `${addr.streetName}, ${city}, ${province}`
 
-    const images = (listing.images || []).map(img => {
-      if (img.startsWith('http')) return img
-      // Strip any leading path segment (e.g. "area/") — keep only the filename
-      const filename = img.includes('/') ? img.split('/').pop() : img
-      return `https://cdn.repliers.io/${filename}`
-    })
+    const images = (listing.images || []).map(img =>
+      img.startsWith('http') ? img : `https://cdn.repliers.io/${img}`
+    )
 
     const price = Number(listing.soldPrice) || Number(listing.listPrice)
 
