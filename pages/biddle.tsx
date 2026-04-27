@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react'
+import Head from 'next/head'
 import 'tailwindcss/tailwind.css'
 import { MAX_GUESSES, CITIES } from '../lib/biddle/constants'
 import { getTodaysHouse, getHint, formatPrice } from '../lib/biddle/game'
@@ -84,6 +85,14 @@ export default function Biddle() {
   }
 
   return (
+    <>
+    <Head>
+      <script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4564824503296156"
+        crossOrigin="anonymous"
+      />
+    </Head>
     <div className="min-h-screen bg-slate-900 text-white flex flex-col items-center py-8 px-4">
       {/* Header */}
       <div className="mb-6 text-center">
@@ -219,5 +228,6 @@ export default function Biddle() {
         </a>
       </div>
     </div>
+    </>
   )
 }
