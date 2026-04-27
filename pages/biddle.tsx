@@ -89,9 +89,9 @@ export default function Biddle() {
       <div className="mb-6 text-center">
         <h1 className="text-4xl font-extrabold tracking-tight text-white">biddle</h1>
         <p className="text-slate-400 text-sm mt-1">
-          Guess the sale price of this home in{' '}
+          {`Guess the sale price of this home in ${city}. `}
           <button onClick={resetCity} className="text-teal-400 underline hover:text-teal-300">
-            {city}
+            Change city
           </button>
         </p>
       </div>
