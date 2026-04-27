@@ -99,12 +99,21 @@ export default function Biddle() {
         <div className="relative">
           <img src={displayImages[imgIndex]} className="w-full h-64 object-cover" alt="House" />
           {displayImages.length > 1 && (
-            <div className="absolute bottom-3 left-0 right-0 flex justify-center gap-2">
-              {displayImages.map((_, i) => (
-                <button key={i} onClick={() => setImgIndex(i)}
-                  className={`w-2.5 h-2.5 rounded-full transition-colors ${i === imgIndex ? 'bg-white' : 'bg-white/40'}`} />
-              ))}
-            </div>
+            <>
+              <button
+                onClick={() => setImgIndex((imgIndex - 1 + displayImages.length) % displayImages.length)}
+                className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white rounded-full w-8 h-8 flex items-center justify-center transition-colors"
+              >
+                ‹
+              </button>
+              <button
+                onClick={() => setImgIndex((imgIndex + 1) % displayImages.length)}
+                className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white rounded-full w-8 h-8 flex items-center justify-center transition-colors"
+              >
+                ›
+              </button>
+              <span className="absolute bottom-2 right-3 text-white/70 text-xs">{imgIndex + 1} / {displayImages.length}</span>
+            </>
           )}
         </div>
         <div className="p-5">
