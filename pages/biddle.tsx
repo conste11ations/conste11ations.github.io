@@ -31,6 +31,7 @@ export default function Biddle() {
   const [guesses, setGuesses] = useState<number[]>([])
   const [done, setDone] = useState(false)
   const [won, setWon] = useState(false)
+  const [descExpanded, setDescExpanded] = useState(false)
   const inputRef = useRef<HTMLInputElement>(null)
 
   if (!city) {
@@ -79,6 +80,7 @@ export default function Biddle() {
     setWon(false)
     setInputValue('')
     setImgIndex(0)
+    setDescExpanded(false)
   }
 
   return (
@@ -97,7 +99,7 @@ export default function Biddle() {
       {/* House card */}
       <div className="w-full max-w-xl bg-slate-800 rounded-2xl overflow-hidden shadow-2xl mb-6">
         <div className="relative">
-          <img src={displayImages[imgIndex]} className="w-full h-64 object-cover" alt="House" />
+          <img src={displayImages[imgIndex]} className="w-full h-80 object-cover" alt="House" />
           {displayImages.length > 1 && (
             <>
               <button
@@ -124,7 +126,20 @@ export default function Biddle() {
             <span>{house.type}</span>
             <span>Built {house.year}</span>
           </div>
-          <p className="text-slate-300 text-sm leading-relaxed">{house.description}</p>
+          <div className="relative">
+            <p className={`text-slate-300 text-sm leading-relaxed ${descExpanded ? '' : 'line-clamp-3'}`}>
+              {house.description}
+            </p>
+            {!descExpanded && (
+              <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-slate-800 to-transparent" />
+            )}
+          </div>
+          <button
+            onClick={() => setDescExpanded(v => !v)}
+            className="text-teal-400 hover:text-teal-300 text-xs mt-2"
+          >
+            {descExpanded ? 'Show less' : 'Show more'}
+          </button>
         </div>
       </div>
 
