@@ -28,19 +28,31 @@ process.stdin.on('end', () => {
     process.exit(1)
   }
 
-  // Support both top-level pageProps and the listing directly
-  const listing = parsed.pageProps?.listing ?? parsed.listing ?? parsed
+  // Support multiple payload shapes:
+  //   { pageProps: { listing: {...} } }  — HonestDoor
+  //   { data: { getListing2: {...} } }   — Repliers GraphQL
+  //   { listing: {...} } or bare listing object
+  const listing =
+    parsed.pageProps?.listing ??
+    parsed.data?.getListing2 ??
+    parsed.listing ??
+    parsed
 
   function transform(listing) {
     const addr = listing.address
     const details = listing.details
+    const meta = listing.meta
 
-    const province = addr.state || addr.province || 'ON'
+    // Prefer provinceAbbr from meta (e.g. "AB"), fall back to addr.state full name
+    const province = meta?.provinceAbbr || addr.state || addr.province || 'ON'
     const address = `${addr.streetName}, ${city}, ${province}`
 
-    const images = (listing.images || []).map(img =>
-      img.startsWith('http') ? img : `https://cdn.repliers.io/${img}`
-    )
+    const images = (listing.images || []).map(img => {
+      if (img.startsWith('http')) return img
+      // Strip any leading path segment (e.g. "area/") — keep only the filename
+      const filename = img.includes('/') ? img.split('/').pop() : img
+      return `https://cdn.repliers.io/${filename}`
+    })
 
     const price = Number(listing.soldPrice) || Number(listing.listPrice)
 
