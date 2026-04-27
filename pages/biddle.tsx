@@ -42,7 +42,7 @@ export default function Biddle() {
   }
 
   const house = getTodaysHouse(houses as any, city)
-  const displayImages = house.images.slice(0, 6)
+  const displayImages = house.images
 
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     const raw = e.target.value.replace(/[^0-9]/g, '')
