@@ -50,7 +50,7 @@ export default function Biddle() {
       <div className="min-h-screen bg-slate-900 text-white flex flex-col items-center justify-center px-4 text-center">
         <h1 className="text-4xl font-extrabold mb-4">biddle</h1>
         <p className="text-slate-400 mb-4">No listings available for {city} yet.</p>
-        <button onClick={resetCity} className="text-teal-400 underline hover:text-teal-300">Choose another city</button>
+        <button onClick={() => setCity(null)} className="text-teal-400 underline hover:text-teal-300">Choose another city</button>
       </div>
     )
   }
