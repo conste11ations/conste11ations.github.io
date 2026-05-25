@@ -4,16 +4,12 @@ on:
   workflow_dispatch:
     inputs:
       city:
-        description: 'City name (must match a value in CITIES constant)'
-        required: true
-        type: string
-      source:
-        description: 'Listing source (toronto or montreal)'
+        description: 'City'
         required: true
         type: choice
         options:
-          - toronto
-          - montreal
+          - Toronto
+          - Montreal
       raw_json:
         description: 'Raw listing JSON'
         required: true
@@ -39,8 +35,7 @@ jobs:
         env:
           RAW_JSON: ${{ inputs.raw_json }}
           CITY: ${{ inputs.city }}
-          SOURCE: ${{ inputs.source }}
-        run: echo "$RAW_JSON" | node scripts/transform-${SOURCE}-listing.js "$CITY"
+        run: echo "$RAW_JSON" | node scripts/transform-${CITY,,}-listing.js "$CITY"
 
       - name: Commit updated houses.json
         run: |
