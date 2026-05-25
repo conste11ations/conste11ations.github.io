@@ -125,6 +125,10 @@ export default function Home() {
           <h1 className="text-5xl md:text-8xl mb-4">
             <span className="block animate-fade-in-down font-extrabold text-white xl:inline">Talk</span>
           </h1>
+          <Link href="/talk/building-biddle" as={process.env.BACKEND_URL + '/talk/building-biddle'}>
+            Building Biddle
+          </Link>
+          <br />
           <Link href="/talk/ben-eater-clock-module" as={process.env.BACKEND_URL + '/talk/ben-eater-clock-module'}>
             Reviewing Ben Eater&apos;s Clock Module Kit
           </Link>
