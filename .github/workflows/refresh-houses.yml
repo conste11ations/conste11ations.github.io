@@ -7,8 +7,15 @@ on:
         description: 'City name (must match a value in CITIES constant)'
         required: true
         type: string
+      source:
+        description: 'Listing source (toronto or montreal)'
+        required: true
+        type: choice
+        options:
+          - toronto
+          - montreal
       raw_json:
-        description: 'Raw Toronto private-sale listing JSON'
+        description: 'Raw listing JSON'
         required: true
         type: string
 
@@ -32,7 +39,8 @@ jobs:
         env:
           RAW_JSON: ${{ inputs.raw_json }}
           CITY: ${{ inputs.city }}
-        run: echo "$RAW_JSON" | node scripts/transform-toronto-listing.js "$CITY"
+          SOURCE: ${{ inputs.source }}
+        run: echo "$RAW_JSON" | node scripts/transform-${SOURCE}-listing.js "$CITY"
 
       - name: Commit updated houses.json
         run: |
