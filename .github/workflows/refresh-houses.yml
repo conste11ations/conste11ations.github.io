@@ -8,7 +8,7 @@ on:
         required: true
         type: string
       raw_json:
-        description: 'Raw HonestDoor/Repliers listing JSON (pageProps object or listing object)'
+        description: 'Raw Toronto private-sale listing JSON'
         required: true
         type: string
 
@@ -29,7 +29,7 @@ jobs:
         run: yarn install
 
       - name: Transform listing and update houses.json
-        run: echo '${{ inputs.raw_json }}' | node scripts/transform-listing.js '${{ inputs.city }}'
+        run: echo '${{ inputs.raw_json }}' | node scripts/transform-toronto-listing.js '${{ inputs.city }}'
 
       - name: Commit updated houses.json
         run: |
