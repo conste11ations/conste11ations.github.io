@@ -5,6 +5,41 @@ import { MAX_GUESSES, CITIES } from '../lib/biddle/constants'
 import { getTodaysHouse, getHint, formatPrice } from '../lib/biddle/game'
 import houses from '../data/houses.json'
 
+const HINTS = [
+  { label: 'Sold!',        color: 'bg-green-500',  arrow: '',      desc: 'Within 5% — nailed it!' },
+  { label: 'A bit high',   color: 'bg-yellow-400', arrow: '↓↓',   desc: '5–10% too high' },
+  { label: 'A bit low',    color: 'bg-yellow-400', arrow: '↑↑',   desc: '5–10% too low' },
+  { label: 'Too high',     color: 'bg-orange-400', arrow: '↓↓↓',  desc: '10–20% too high' },
+  { label: 'Too low',      color: 'bg-orange-400', arrow: '↑↑↑',  desc: '10–20% too low' },
+  { label: 'Way too high', color: 'bg-red-500',    arrow: '↓↓↓↓', desc: 'More than 20% too high' },
+  { label: 'Way too low',  color: 'bg-red-500',    arrow: '↑↑↑↑', desc: 'More than 20% too low' },
+]
+
+function RulesModal({ onClose }: { onClose: () => void }) {
+  return (
+    <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 px-4" onClick={onClose}>
+      <div className="bg-slate-800 rounded-2xl p-6 w-full max-w-md shadow-2xl" onClick={e => e.stopPropagation()}>
+        <div className="flex items-center justify-between mb-4">
+          <h2 className="text-xl font-extrabold text-white">How to play</h2>
+          <button onClick={onClose} className="text-slate-400 hover:text-white text-2xl leading-none">&times;</button>
+        </div>
+        <p className="text-slate-300 text-sm mb-5">
+          You have <span className="text-white font-semibold">6 guesses</span> to land on the sale price of today&apos;s listing.
+          After each guess you&apos;ll get a colour-coded hint:
+        </p>
+        <div className="flex flex-col gap-2">
+          {HINTS.map((h, i) => (
+            <div key={i} className={`flex items-center justify-between rounded-xl px-4 py-3 ${h.color} text-white`}>
+              <span className="font-semibold text-sm">{h.label} {h.arrow}</span>
+              <span className="text-sm opacity-90">{h.desc}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}
+
 function CityPicker({ onSelect }: { onSelect: (city: string) => void }) {
   return (
     <div className="min-h-screen bg-slate-900 text-white flex flex-col items-center justify-center px-4">
@@ -33,6 +68,7 @@ export default function Biddle() {
   const [done, setDone] = useState(false)
   const [won, setWon] = useState(false)
   const [descExpanded, setDescExpanded] = useState(false)
+  const [rulesOpen, setRulesOpen] = useState(false)
   const inputRef = useRef<HTMLInputElement>(null)
 
   if (!city) {
@@ -104,6 +140,7 @@ export default function Biddle() {
         crossOrigin="anonymous"
       />
     </Head>
+    {rulesOpen && <RulesModal onClose={() => setRulesOpen(false)} />}
     <div className="w-full bg-teal-800 text-teal-100 text-xs text-center py-2 px-4">
       💛 Thanks to JR and Luis for supporting this game!
     </div>
@@ -115,6 +152,10 @@ export default function Biddle() {
           {`Guess the sale price of this home in ${city}. `}
           <button onClick={resetCity} className="text-teal-400 underline hover:text-teal-300">
             Change city
+          </button>
+          {' · '}
+          <button onClick={() => setRulesOpen(true)} className="text-teal-400 underline hover:text-teal-300">
+            How to play
           </button>
         </p>
       </div>
