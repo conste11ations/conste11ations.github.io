@@ -44,6 +44,17 @@ export default function Biddle() {
   }
 
   const house = getTodaysHouse(houses as any, city)
+
+  if (!house) {
+    return (
+      <div className="min-h-screen bg-slate-900 text-white flex flex-col items-center justify-center px-4 text-center">
+        <h1 className="text-4xl font-extrabold mb-4">biddle</h1>
+        <p className="text-slate-400 mb-4">No listings available for {city} yet.</p>
+        <button onClick={resetCity} className="text-teal-400 underline hover:text-teal-300">Choose another city</button>
+      </div>
+    )
+  }
+
   const displayImages = house.images
 
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -93,6 +104,9 @@ export default function Biddle() {
         crossOrigin="anonymous"
       />
     </Head>
+    <div className="w-full bg-teal-800 text-teal-100 text-xs text-center py-2 px-4">
+      💛 Thanks to JR and Luis for supporting this game!
+    </div>
     <div className="min-h-screen bg-slate-900 text-white flex flex-col items-center py-8 px-4">
       {/* Header */}
       <div className="mb-6 text-center">
