@@ -85,23 +85,25 @@ export default function Home() {
             <span className="block animate-fade-in-up text-2xl md:text-4xl text-teal-400 xl:inline">.github.io</span>
           </h1>
         </div>
-        <div className="absolute bottom-0 left-0 right-0 md:grid md:grid-cols-3">
-          <Link href="/about" as={process.env.BACKEND_URL + '/about'}>
-            <div className="flex h-20 bg-indigo-900 hover:bg-teal-700 drop-shadow-xl">
-              <h2 className="m-auto font-extrabold text-white text-2xl">About</h2>
-            </div>
-          </Link>
-          <Link href="/talk" as={process.env.BACKEND_URL + '/talk'}>
-            <div className="flex h-20 bg-indigo-800 hover:bg-teal-700 drop-shadow-xl">
-              <h2 className="m-auto font-extrabold text-white text-2xl">Talk</h2>
-            </div>
-          </Link>
-          <Link href="/contact" as={process.env.BACKEND_URL + '/contact'}>
-            <div className="flex h-20 bg-indigo-600 hover:bg-teal-700 drop-shadow-xl">
-              <h2 className="m-auto font-extrabold text-white text-2xl">Contact</h2>
-            </div>
-          </Link>
-        </div>
+      </div>
+
+      {/* Nav cards */}
+      <div className="md:grid md:grid-cols-3">
+        <Link href="/about" as={process.env.BACKEND_URL + '/about'}>
+          <div className="flex h-20 bg-indigo-900 hover:bg-teal-700 drop-shadow-xl">
+            <h2 className="m-auto font-extrabold text-white text-2xl">About</h2>
+          </div>
+        </Link>
+        <Link href="/talk" as={process.env.BACKEND_URL + '/talk'}>
+          <div className="flex h-20 bg-indigo-800 hover:bg-teal-700 drop-shadow-xl">
+            <h2 className="m-auto font-extrabold text-white text-2xl">Talk</h2>
+          </div>
+        </Link>
+        <Link href="/contact" as={process.env.BACKEND_URL + '/contact'}>
+          <div className="flex h-20 bg-indigo-600 hover:bg-teal-700 drop-shadow-xl">
+            <h2 className="m-auto font-extrabold text-white text-2xl">Contact</h2>
+          </div>
+        </Link>
       </div>
 
       {/* Section 2: About */}
