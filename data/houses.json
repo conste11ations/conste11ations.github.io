@@ -60,5 +60,41 @@
       "https://skyline-cdn-production.s3.ca-central-1.amazonaws.com/variants/TGorjwKkrT5cAFpsmfhPqJtN/ec43a39e020dfc98f1f3170490e744c784837a4363c67c5bb98cbf0a28bfdd60"
     ],
     "price": 4999900
+  },
+  {
+    "id": "1121118",
+    "city": "Montreal",
+    "address": "4426, avenue Christophe Colomb, Le Plateau-Mont-Royal, QC",
+    "beds": 4,
+    "baths": 2.5,
+    "sqft": null,
+    "type": "Two-Storey Townhouse",
+    "year": 1905,
+    "description": "Magnificent residence on two floors, bright and generously proportioned, located in a lively and warm neighborhood, known for its friendly neighborhood and its lively alley atmosphere. The property offers a spacious and upscale kitchen, equipped with a Viking gas stove - the dream of any serious cook - as well as heated floors ensuring absolute comfort in all seasons. The main living area is vast, warm and perfectly suited to both receptions and daily life . The house includes numerous rooms, ideal for a family, teleworking or guests, as well as two complete, well-thought-out and functional bathrooms, and a powder room on the ground floor. Outside, you will enjoy a pretty landscaped garden offering great privacy, a garage with socket (NEMA) to connect an electric vehicle charging station and a shed for bicycles and others; rare and highly sought after assets in a dense urban environment. Located on a peaceful and tree-lined street, the property is close to two of the most beautiful parks in the city (Lafontaine and Laurier), numerous quality food shops, and a few minutes from the Mont Royal metro station and the mountain. Everything is within a pleasant walking distance of McGill and UQAM universities as well as downtown, offering an exceptional urban lifestyle without compromising on space and comfort. In short: a house that ticks all the boxes and even the ones you didn't dare hope for!",
+    "images": [
+      "https://photos.duproprio.com/photos/public/for_sale/202601/1121118/maison-2-etages-plateau-mont-royal-1600-15414189.jpg",
+      "https://photos.duproprio.com/photos/public/for_sale/202601/1121118/maison-2-etages-plateau-mont-royal-1600-15414159.jpg",
+      "https://photos.duproprio.com/photos/public/for_sale/202601/1121118/maison-2-etages-plateau-mont-royal-1600-15414163.jpg",
+      "https://photos.duproprio.com/photos/public/for_sale/202601/1121118/maison-2-etages-plateau-mont-royal-1600-15414160.jpg",
+      "https://photos.duproprio.com/photos/public/for_sale/202601/1121118/maison-2-etages-plateau-mont-royal-1600-15414168.jpg",
+      "https://photos.duproprio.com/photos/public/for_sale/202601/1121118/maison-2-etages-plateau-mont-royal-1600-15414177.jpg",
+      "https://photos.duproprio.com/photos/public/for_sale/202601/1121118/maison-2-etages-plateau-mont-royal-1600-15414188.jpg",
+      "https://photos.duproprio.com/photos/public/for_sale/202601/1121118/maison-2-etages-plateau-mont-royal-1600-15414197.jpg",
+      "https://photos.duproprio.com/photos/public/for_sale/202601/1121118/maison-2-etages-plateau-mont-royal-1600-15414178.jpg",
+      "https://photos.duproprio.com/photos/public/for_sale/202601/1121118/maison-2-etages-plateau-mont-royal-1600-15414169.jpg",
+      "https://photos.duproprio.com/photos/public/for_sale/202601/1121118/maison-2-etages-plateau-mont-royal-1600-15414197.jpg",
+      "https://photos.duproprio.com/photos/public/for_sale/202601/1121118/maison-2-etages-plateau-mont-royal-1600-15414169.jpg",
+      "https://photos.duproprio.com/photos/public/for_sale/202601/1121118/maison-2-etages-plateau-mont-royal-1600-15414170.jpg",
+      "https://photos.duproprio.com/photos/public/for_sale/202601/1121118/maison-2-etages-plateau-mont-royal-1600-15414185.jpg",
+      "https://photos.duproprio.com/photos/public/for_sale/202601/1121118/maison-2-etages-plateau-mont-royal-1600-15414207.jpg",
+      "https://photos.duproprio.com/photos/public/for_sale/202601/1121118/maison-2-etages-plateau-mont-royal-1600-15414174.jpg",
+      "https://photos.duproprio.com/photos/public/for_sale/202601/1121118/maison-2-etages-plateau-mont-royal-1600-15414167.jpg",
+      "https://photos.duproprio.com/photos/public/for_sale/202601/1121118/maison-2-etages-plateau-mont-royal-1600-15414194.jpg",
+      "https://photos.duproprio.com/photos/public/for_sale/202601/1121118/maison-2-etages-plateau-mont-royal-1600-15414192.jpg",
+      "https://photos.duproprio.com/photos/public/for_sale/202601/1121118/maison-2-etages-plateau-mont-royal-1600-15414181.jpg",
+      "https://photos.duproprio.com/photos/public/for_sale/202601/1121118/maison-2-etages-plateau-mont-royal-1600-15414187.jpg",
+      "https://photos.duproprio.com/photos/public/for_sale/202601/1121118/maison-2-etages-plateau-mont-royal-1600-15414202.jpg"
+    ],
+    "price": 1637500
   }
 ]
