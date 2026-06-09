@@ -31,7 +31,7 @@ function RulesModal({ onClose }: { onClose: () => void }) {
           {HINTS.map((h, i) => (
             <div key={i} className={`flex items-center justify-between rounded-xl px-4 py-3 ${h.color} text-white`}>
               <span className="font-semibold text-sm">{h.label} {h.arrow}</span>
-              <span className="text-sm opacity-90">{h.desc}</span>
+              <span className="text-sm opacity-90 text-right">{h.desc}</span>
             </div>
           ))}
         </div>
