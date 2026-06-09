@@ -1,5 +1,5 @@
 name: refresh-houses
-run-name: refresh-houses: ${{ inputs.city }} ${{ github.event.repository.updated_at }}
+run-name: refresh-houses: ${{ inputs.city }}
 
 on:
   workflow_dispatch:
