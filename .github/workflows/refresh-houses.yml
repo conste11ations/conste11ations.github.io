@@ -1,5 +1,4 @@
 name: refresh-houses
-run-name: refresh-houses: ${{ inputs.city }}
 
 on:
   workflow_dispatch:
