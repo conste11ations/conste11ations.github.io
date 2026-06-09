@@ -31,7 +31,7 @@ process.stdin.on('end', () => {
       address,
       beds: Number(listing.bedroom_count) || 0,
       baths: Number(listing.bathroom_count) || 0,
-      sqft: null,
+      sqft: listing.sqft ? Number(listing.sqft) : null,
       type: listing.type || 'Residential',
       year,
       description: listing.description || '',
